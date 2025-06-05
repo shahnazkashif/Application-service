@@ -46,14 +46,14 @@ app.use(cookieParser());
 app.use('/', express.static(path.join(__dirname, '/public')));
 
 // routes
-app.use('/', require('./routes/root'));
-app.use('/register', require('./routes/register'));
+//app.use('/', require('./routes/root'));
+//app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/refresh', require('./routes/refresh'));
 //app.use('/logout', require('./routes/logout'));
 
 app.use(verifyJWT);
-app.use("/personaldetails", require('./routes/api/PersonalDetails'))
+app.use("/api/profile", require('./routes/api/profileRoutes'));
 
 //app.all is for routin and apply for all http methods at once
 //app.use is for middleware and not support rjax
