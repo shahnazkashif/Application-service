@@ -57,7 +57,10 @@ const updateProfile = async (req, res) => {
   try {
     const updated = await Profile.findByIdAndUpdate(
       req.params.id,
-      { ...req.body, 'meta.updatedBy': req.user?.userId },
+      { ...req.body,
+         'meta.updatedBy': req.user?.userId ,
+         'meta.updatedAt': new Date().toLocaleDateString('en-GB')
+        },
       { new: true }
     );
     if (!updated) return res.status(404).json({ error: 'Profile not found' });

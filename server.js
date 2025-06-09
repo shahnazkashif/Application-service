@@ -54,6 +54,9 @@ app.use('/refresh', require('./routes/refresh'));
 
 app.use(verifyJWT);
 app.use("/api/profile", require('./routes/api/profileRoutes'));
+app.use("/api/professional", require('./routes/api/professionalRoutes'));
+app.use("/api/subscription", require('./routes/api/subscriptionRoutes'));
+
 
 //app.all is for routin and apply for all http methods at once
 //app.use is for middleware and not support rjax
